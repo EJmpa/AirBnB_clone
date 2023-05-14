@@ -38,14 +38,14 @@ class FileStorage:
         doesn’t exist, no exception should be raised)
         """
         try:
-            with open(FileStorage.__file_path, encoding="utf-8") as f:
-                #from models.base_model import BaseModel
-                #from models.user import User
-                #from models.city import City
-                #from models.amenity import Amenity
-                #from models.place import Place
-                #from models.review import Review
-                #from models.state import State
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+                from models.base_model import BaseModel
+                from models.user import User
+                from models.city import City
+                from models.amenity import Amenity
+                from models.place import Place
+                from models.review import Review
+                from models.state import State
 
                 dictionary = json.load(f)
             for key, value in dictionary.items():
