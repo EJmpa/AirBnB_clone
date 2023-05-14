@@ -50,6 +50,6 @@ class FileStorage:
                 dictionary = json.load(f)
             for key, value in dictionary.items():
                 class_name = value['__class__']
-                FileStorage.__objects[key] = eval(class_name)(**value)
+                FileStorage.__objects[key] = eval(clas + "(**value)"))
         except IOError:
             pass
