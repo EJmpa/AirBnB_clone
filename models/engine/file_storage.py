@@ -38,7 +38,7 @@ class FileStorage:
         doesn’t exist, no exception should be raised)
         """
         try:
-            with open(FileStorage.__file_path, encoding="utf-8") as myfile:
+            with open(FileStorage.__file_path, encoding="utf-8") as f:
                 from models.base_model import BaseModel
                 from models.user import User
                 from models.city import City
