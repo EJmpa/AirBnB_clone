@@ -48,8 +48,9 @@ class FileStorage:
                 from models.state import State
 
                 dictionary = json.load(f)
-            for key, value in dictionary.items():
-                class_name = value['__class__']
-               FileStorage.__objects[key] = eval(class_name)(**value)
+                for key, value in dictionary.items():
+                    class_name = value['__class__']
+                    FileStorage.__objects[key] = eval(class_name)(**value)
         except FileNotFoundError:
             pass
+
