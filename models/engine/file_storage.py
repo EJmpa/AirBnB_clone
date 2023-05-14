@@ -51,5 +51,5 @@ class FileStorage:
             for key, value in dictionary.items():
                 class_name = value['__class__']
                 FileStorage.__objects[key] = eval(class_name)(**value)
-        except FileNotFoundError:
+        except IOError:
             pass
