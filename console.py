@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Defines a console for HBnB
+""" Defines a console for HBnB.
 """
 import cmd
 
