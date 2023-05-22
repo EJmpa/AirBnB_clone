@@ -5,23 +5,25 @@ import cmd
 
 import re
 
-from shlex import split
+import models  # noqa
 
-from models import storage
+from shlex import split  # noqa
 
-from models.base_model import BaseModel
+from models import storage  # noqa
 
-from models.user import User
+from models.base_model import BaseModel  # noqa
 
-from models.state import State
+from models.user import User  # noqa
 
-from models.city  import City
+from models.state import State  # noqa
 
-from models.place import Place
+from models.city  import City  # noqa
 
-from models.amenity import Amenity
+from models.place import Place  # noqa
 
-from models.review import Review
+from models.amenity import Amenity  # noqa
+
+from models.review import Review  # noqa
 
 
 def parse(arg):
@@ -90,21 +92,6 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ an empty line + ENTER executes nothing"""
         pass
-
-    def do_create(self, arg):
-        """Creates a new instance of a class"""
-        args = arg.split()
-        if len(args) == 0:
-            print("** class name missing **")
-            return False
-        if args[0] in classes:
-            new_dict = self._key_value_parser(args[1:])
-            instance = classes[args[0]](**new_dict)
-        else:
-            print("** class doesn't exist **")
-            return False
-        print(instance.id)
-        instance.save()
 
     def do_create(self, arg):
 
@@ -184,7 +171,7 @@ class HBNBCommand(cmd.Cmd):
                     object_list.append(str(obj))
                 elif len(arguments) == 0:
                     object_list.append(str(obj))
-                    print(object_list)
+            print(object_list)
 
     def do_count(self, arg):
 
@@ -196,7 +183,7 @@ class HBNBCommand(cmd.Cmd):
 
         for obj in storage.all().values():
 
-            if argl[0] == obj.__class__.__name__:
+            if arguments[0] == obj.__class__.__name__:
 
                 count += 1
 
