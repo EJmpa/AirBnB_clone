@@ -17,7 +17,7 @@ from models.user import User  # noqa
 
 from models.state import State  # noqa
 
-from models.city  import City  # noqa
+from models.city import City  # noqa
 
 from models.place import Place  # noqa
 
