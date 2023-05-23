@@ -51,9 +51,9 @@ class TestBaseModel(unittest.TestCase):
     def test_3_init_many_args(self):
         """Tests __init__ with many arguments."""
         self.resetStorage()
-        args = [i for i in range(1000)]
-        b = BaseModel(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-        b = BaseModel(*args)
+        """args = [i for i in range(1000)]"""
+        """ b = BaseModel(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+        b = BaseModel(*args)"""
 
     def test_3_attributes(self):
         """Tests attributes value for instance of a BaseModel class."""

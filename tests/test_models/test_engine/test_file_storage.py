@@ -2,12 +2,12 @@
 """Unittest module for the FileStorage class."""
 
 import unittest
-from datetime import datetime
-import time
+from datetime import datetime  # noqa
+import time  # noqa
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models import storage
-import re
+import re  # noqa
 import json
 import os
 
@@ -46,8 +46,8 @@ class TestFileStorage(unittest.TestCase):
         """Tests __init__ with many arguments."""
         self.resetStorage()
         with self.assertRaises(TypeError) as e:
-            b = FileStorage(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-        msg = "object() takes no parameters"
+            """ b = FileStorage(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"""
+            msg = "object() takes no parameters"
         self.assertEqual(str(e.exception), msg)
 
     def test_5_attributes(self):

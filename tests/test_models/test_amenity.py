@@ -2,11 +2,11 @@
 """Unittest module for the Amenity Class."""
 
 import unittest
-from datetime import datetime
-import time
+from datetime import datetime  # noqa
+import time  # noqa
 from models.amenity import Amenity
-import re
-import json
+import re  # noqa
+import json  # noqa
 from models.engine.file_storage import FileStorage
 import os
 from models import storage

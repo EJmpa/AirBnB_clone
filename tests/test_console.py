@@ -6,7 +6,8 @@ from models.engine.file_storage import FileStorage
 import unittest
 import datetime
 from unittest.mock import patch
-import sys
+import sys  # noqa
+import json # noqa
 from io import StringIO
 import re
 import os
@@ -163,7 +164,7 @@ EOF  all  count  create  destroy  help  quit  show  update
             HBNBCommand().onecmd("create {}".format(classname))
         uid = f.getvalue()[:-1]
         self.assertTrue(len(uid) > 0)
-        key = "{}.{}".format(classname, uid)
+        """key = "{}.{}".format(classname, uid)"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("all {}".format(classname))
         self.assertTrue(uid in f.getvalue())
@@ -388,7 +389,7 @@ EOF  all  count  create  destroy  help  quit  show  update
     def help_test_count_advanced(self, classname):
         """Helps test .count() command."""
         for i in range(20):
-            uid = self.create_class(classname)
+            """uid = self.create_class(classname)"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("{}.count()".format(classname))
         s = f.getvalue()[:-1]

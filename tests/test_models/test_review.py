@@ -2,11 +2,11 @@
 """Unittest module for the Review Class."""
 
 import unittest
-from datetime import datetime
-import time
+from datetime import datetime  # noqa
+import time  # noqa
 from models.review import Review
-import re
-import json
+import re  # noqa
+import json  # noqa
 from models.engine.file_storage import FileStorage
 import os
 from models import storage
