@@ -16,34 +16,21 @@ from models.review import Review  # noqa
 
 
 def parse(arg):
+    """Parse the argument string and extract specific patterns."""
     curly_braces_match = re.search(r"\{(.*?)\}", arg)
-
     brackets_match = re.search(r"\[(.*?)\]", arg)
-
     if curly_braces_match is None:
-
         if brackets_match is None:
-
             return [i.strip(",") for i in split(arg)]
-
         else:
-
             lexer = split(arg[:brackets_match.span()[0]])
-
             ret_list = [i.strip(",") for i in lexer]
-
             ret_list.append(brackets_match.group())
-
             return ret_list
-
     else:
-
         lexer = split(arg[:curly_braces_match.span()[0]])
-
         ret_list = [i.strip(",") for i in lexer]
-
         ret_list.append(curly_braces_match.group())
-
         return ret_list
 
 
@@ -224,7 +211,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[k] = v
         storage.save()
-
 
 
 if __name__ == '__main__':
